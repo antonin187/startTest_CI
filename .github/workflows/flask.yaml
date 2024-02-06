@@ -22,5 +22,5 @@ jobs:
         run: |
           python app.py &
           sleep 
-          curl -I http://localhost:5000/
+          curl -I http://localhost:5000
           pkill -f "python app.py"
