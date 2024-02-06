@@ -20,6 +20,5 @@ jobs:
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: /
-          python sum.py
-          python test_sum.py
+          pytest
           echo "Test is successful"
