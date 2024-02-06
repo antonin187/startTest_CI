@@ -15,12 +15,12 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r requirements_flask.txt
       - name: Run tests in python
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python app.py &
-          sleep 5  # Attendez quelques secondes pour permettre à l'application de démarrer
-          curl -I http://localhost:5000  # Remplacez cela par vos tests de vérification
-          pkill -f "python app.py"  # Tuez le processus associé à l'application Flask
+          sleep 
+          curl -I http://localhost:5000/
+          pkill -f "python app.py"
