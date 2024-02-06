@@ -20,5 +20,7 @@ jobs:
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          python app.py
-          echo "Test is successful"
+          python app.py &
+          sleep 5  # Attendez quelques secondes pour permettre à l'application de démarrer
+          curl -I http://localhost:5000  # Remplacez cela par vos tests de vérification
+          pkill -f "python app.py"  # Tuez le processus associé à l'application Flask
