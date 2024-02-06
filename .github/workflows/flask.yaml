@@ -21,6 +21,6 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python app.py &
-          sleep 
-          curl -I http://localhost:5000
+          sleep 5
+          curl -I http://localhost:5000/
           pkill -f "python app.py"
