@@ -19,6 +19,6 @@ jobs:
       - name: Run tests in python
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: /
+        run: |
           pytest
           echo "Test is successful"
